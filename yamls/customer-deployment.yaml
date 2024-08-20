@@ -16,6 +16,9 @@ spec:
     metadata:
       labels:
         app: customer
+        environment: test
+        tier: backend
+        department: engineering
     spec:
       containers:
       - name: customer
@@ -45,3 +48,16 @@ spec:
   - port: 80
     targetPort: 8080
     nodePort: 30000
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: customer
+spec:
+  type: ClusterIP
+  selector:
+    app: customer
+  ports:
+  - port: 80
+    targetPort: 8080
