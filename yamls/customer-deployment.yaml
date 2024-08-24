@@ -28,6 +28,22 @@ spec:
           limits:
             memory: "128Mi"
             cpu: "500m"
+        livenessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+            initialDelaySeconds: 5
+            timeoutSeconds: 1
+            failureThreshold: 3
+            periodSeconds: 5
+        readinessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+            initialDelaySeconds: 10
+            timeoutSeconds: 1
+            failureThreshold: 3
+            periodSeconds: 5
         env:
           - name: ORDER_SERVICE
             value: "order"
