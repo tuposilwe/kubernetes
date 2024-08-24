@@ -77,6 +77,7 @@ spec:
           - mountPath: /etc/order/config
             name: config
         image: busybox
+        imagePullPolicy: IfNotPresent
         command:
           - "/bin/sh"
           - "-c"
@@ -88,6 +89,7 @@ spec:
             cpu: "500m"
       - name: config-map-env
         image: busybox
+        imagePullPolicy: IfNotPresent
         resources:
           limits:
             memory: "128Mi"

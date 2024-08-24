@@ -23,6 +23,7 @@ spec:
       containers:
       - name: customer
         image: "amigoscode/kubernetes:customer-v1"
+        imagePullPolicy: IfNotPresent
         resources:
           limits:
             memory: "128Mi"

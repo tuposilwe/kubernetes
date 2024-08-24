@@ -23,6 +23,7 @@ spec:
       containers:
       - name: order
         image: "amigoscode/kubernetes:order-v1"
+        imagePullPolicy: IfNotPresent
         resources:
           limits:
             memory: "128Mi"

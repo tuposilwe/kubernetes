@@ -48,6 +48,7 @@ spec:
       containers:
       - name: pv-pvc
         image: nginx
+        imagePullPolicy: IfNotPresent
         volumeMounts:
           - mountPath: "/usr/share/nginx/html"
             name: data

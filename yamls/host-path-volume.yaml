@@ -18,6 +18,7 @@ spec:
       containers:
       - name: hostpath
         image:  busybox
+        imagePullPolicy: IfNotPresent
         command: 
           - "sleep"
           - "3600"
